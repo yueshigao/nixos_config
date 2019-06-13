@@ -6,7 +6,7 @@ in
 {
 
   # Version
-  system.stateVersion = "18.03";
+  system.stateVersion = "19.03";
 
   # Imports
   imports = [
@@ -22,7 +22,7 @@ in
   boot.initrd.checkJournalingFS = false;
 
   # Host
-  networking.hostName = "nixos-vm";
+  networking.hostName = "nixos-yue";
 
   # Groups
   users.groups = {
@@ -30,13 +30,7 @@ in
   };
 
   # File System
-  fileSystems."/home/${username}/shared" = {
-    fsType = "vboxsf";
-    device = "vbox_shared";
-    mountPoint = "/home/${username}/shared";
-    noCheck = true;
-    options = [ "defaults" ];
-  };
+
 
   ## Specific ##
 

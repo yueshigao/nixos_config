@@ -1,17 +1,12 @@
 { config, pkgs, ... }:
 
 let
-  unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
   username = (import ./variables.nix).username;
 in
 {
 
   nixpkgs.config.allowUnfree = true;
   system.autoUpgrade.enable = true;
-
-  nixpkgs.config.packageOverrides = pkgs: {
-    unstable = import unstableTarball { config = config.nixpkgs.config; };
-  };
 
   time.timeZone = "Europe/Paris";
 
@@ -52,7 +47,7 @@ in
     zip
     zsh
 
-    unstable.antibody
+    antibody
 
   ];
 
@@ -69,7 +64,7 @@ in
 
   users.extraUsers.${username} = {
      isNormalUser = true;
-     uid = 4280;
+     uid = 1160;
      initialPassword = "changeme";
      createHome = true;
      home = "/home/${username}";

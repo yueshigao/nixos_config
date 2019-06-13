@@ -41,26 +41,15 @@ in
 
     # Cursors
     numix-cursor-theme
-    xbanish
-
-    # Notification
-    dunst
 
     # Panel
-    ( polybar.override {
-        pulseSupport = true;
-        mpdSupport = true;
-      }
-    )
+    polybar
 
     # Colors
     pywal
 
     # Lock
     i3lock-color
-
-    # System information
-    conky
 
     # Wallpaper
     feh
@@ -71,7 +60,7 @@ in
     albert
 
     # Browser
-    firefox
+    google-chrome
 
     # File explorer
     pcmanfm lxmenu-data gvfs
